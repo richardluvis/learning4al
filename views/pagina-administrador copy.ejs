@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Administrador</title>
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .alert-message {
+            background-color: #ffc107;
+            color: #856404;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .btn-action {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .btn-action:hover {
+            background-color: #c82333;
+        }
+
+        footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-item">
+                    <a class="nav-link" href="/estudiantes">Administrar Estudiantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cursos">Administrar Cursos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/perfil">Mi perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cerrar-sesion">Cerrar sesión</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bienvenido, Administrador</h1>
+        <p>Aquí puedes administrar estudiantes y cursos.</p>
+
+        <div class="alert-message">
+            <p>¡Atención! Tienes nuevas notificaciones.</p>
+        </div>
+
+        <div>
+            <h2>Administrar Estudiantes</h2>
+            <p>Aquí puedes realizar acciones relacionadas con los estudiantes.</p>
+            <a href="/estudiantes" class="btn-action">Administrar Estudiantes</a>
+        </div
+        <div>
+            <h2>Administrar Cursos</h2>
+            <p>Aquí puedes realizar acciones relacionadas con los cursos.</p>
+            <a href="/cursos" class="btn-action">Administrar Cursos</a>
+        </div>
+    
+        <div>
+            <h2>Mi Perfil</h2>
+            <p>Aquí puedes ver y editar tu perfil de administrador.</p>
+            <a href="/perfil" class="btn-action">Mi Perfil</a>
+        </div>
+    
+        <div>
+            <h2>Cerrar Sesión</h2>
+            <p>Termina tu sesión como administrador.</p>
+            <a href="/cerrar-sesion" class="btn-action">Cerrar Sesión</a>
+        </div>
+    </main>
+    
+    <footer>
+        <p>© 2023 Plataforma de Estudio. Todos los derechos reservados.</p>
+    </footer>
+    

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/vendor/aos/aos.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="/css/style.css" rel="stylesheet">
+    <style>
+        /* Estilos personalizados */
+        .btn-action {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-action:hover {
+            background-color: #218838;
+        }
+
+        .admin-section {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .admin-section h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th,
+        .admin-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .admin-table th {
+            background-color: #f8f9fa;
+            color: #333;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .admin-table td {
+            color: #666;
+        }
+
+        .admin-table .actions {
+            white-space: nowrap;
+        }
+
+        .admin-table .actions a {
+            color: #007bff;
+            margin-right: 10px;
+        }
+
+        .admin-table .actions a:hover {
+            text-decoration: underline;
+        }
+
+        .admin-form {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .admin-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .admin-form .form-group label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .admin-form .form-group input,
+        .admin-form .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .admin-form .form-group input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .admin-form .form-group input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        .admin-form .form-group input[type="reset"] {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .admin-form .form-group input[type="reset"]:hover {
+            background-color: #c82333;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- ... Código del encabezado ... -->
+    </header>
+    <main>
+        <div class="admin-section">
+            <h2>Administrar Estudiantes</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>johndoe@example.com</td>
+                        <td class="actions">
+                            <a href="/estudiantes/editar/1">Editar</a>
+                            <a href="/estudiantes/eliminar/1">Eliminar</a>
+                        </td>
+                    </tr>
+                    <!-- Aquí se mostrarían los demás estudiantes -->
+                </tbody>
+            </table>
+
+            <div class="admin-form">
+                <h3>Agregar Estudiante</h3>
+                <form action="/estudiantes/agregar" method="POST">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Agregar">
+                        <input type="reset" value="Limpiar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- ... Código del pie de página ... -->
+    </footer>
+    <!-- ... Resto del código ... -->
+</body>
+
+</html>

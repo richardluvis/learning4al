@@ -1,0 +1,11 @@
+node --version
+npm --version
+npm init -y
+npm install mysql2
+npm install express mysql2
+npm install ejs
+npm install express-session
+node server.js
+node consultaUsuarios.js para consultar usuarios
+
+
