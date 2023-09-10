@@ -39,10 +39,12 @@ app.post('/registrar', (req, res) => {
     connection.query(query, values, (error, results) => {
         if (error) {
             console.error('Error al guardar el usuario:', error);
-            res.send('Error al registrar el usuario.');
+            res.render('Error al registrar el usuario.');
         } else {
             console.log('Usuario registrado exitosamente.');
             res.send('Usuario registrado exitosamente.');
+            
+
         }
     });
 });
