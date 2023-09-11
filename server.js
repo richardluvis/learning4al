@@ -39,10 +39,15 @@ app.post('/registrar', (req, res) => {
     connection.query(query, values, (error, results) => {
         if (error) {
             console.error('Error al guardar el usuario:', error);
-            res.send('Error al registrar el usuario.');
+            const successMessage = encodeURIComponent('Error al guardar el usuario:');
+            const redirectURL = '/usuarios.html' + '?mensaje=' + successMessage;
+            res.redirect(redirectURL);
         } else {
             console.log('Usuario registrado exitosamente.');
-            res.send('Usuario registrado exitosamente.');
+            const successMessage = encodeURIComponent('Usuario registrado exitosamente.');
+            const redirectURL = '/sesion.html' + '?mensaje=' + successMessage;
+            res.redirect(redirectURL);
+
         }
     });
 });
