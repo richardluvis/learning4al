@@ -42,8 +42,7 @@ app.post('/registrar', (req, res) => {
             res.render('Error al registrar el usuario.');
         } else {
             console.log('Usuario registrado exitosamente.');
-            res.send('Usuario registrado exitosamente.');
-            
+            res.send('help me i cat do it');
 
         }
     });

@@ -1,44 +1,41 @@
--- Creación de la base de datos
-CREATE DATABASE nombre_de_la_base_de_datos;
+-- Creación de la base de datos 'learning'
+DROP DATABASE if exists learning;
 
--- Selección de la base de datos
-USE nombre_de_la_base_de_datos;
+CREATE DATABASE learning;
 
--- Creación de la tabla "usuarios"
+-- Cambio al contexto de la base de datos 'learning'
+USE learning;
+
+-- Creación de la tabla 'usuarios'
 CREATE TABLE usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
-  email VARCHAR(100) NOT NULL,
-  tipo_usuario ENUM('normal', 'administrador') NOT NULL
+  nombre VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL UNIQUE,
+  pass blob NOT NULL,
+  tipo ENUM('estudiante', 'administrador') DEFAULT 'estudiante'
 );
 
--- Creación de la tabla "cursos"
+-- Inserción de 5 registros en la tabla 'usuarios'
+INSERT INTO usuarios (nombre, email, pass, tipo) VALUES
+  ('Carlos', 'carlos@example.com', '123456', 'estudiante'),
+  ('María', 'maria@example.com', 'abcdef', 'estudiante'),
+  ('Javier', 'javier@example.com', 'qwerty', 'estudiante'),
+  ('Laura', 'laura@example.com', 'password', 'estudiante'),
+  ('Andrés', 'andres@example.com', 'secret', 'administrador');
+
+-- Creación de la tabla 'cursos'
 CREATE TABLE cursos (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre VARCHAR(100) NOT NULL,
+  nombre VARCHAR(255) NOT NULL,
   descripcion TEXT,
-  fecha_inicio DATE,
-  fecha_fin DATE,
-  administrador_id INT,
-  FOREIGN KEY (administrador_id) REFERENCES usuarios (id)
+  duracion INT,
+  fecha_inicio DATE
 );
 
-
-
--- Insertar usuarios 
-INSERT INTO usuarios (nombre, email, tipo_usuario)
-VALUES ('Carlos', 'carlos@example.com', 'normal'),
-       ('María', 'maria@example.com', 'normal'),
-       ('Javier', 'javier@example.com', 'normal'),
-       ('Laura', 'laura@example.com', 'normal'),
-       ('Andrés', 'andres@example.com', 'administrador');
-
-
-
--- Insertar cursos
-INSERT INTO cursos (nombre, descripcion, fecha_inicio, fecha_fin, administrador_id)
-VALUES ('Programación en Python', 'Aprende a programar en Python desde cero.', '2023-06-01', '2023-07-15', 1),
-       ('Diseño gráfico digital', 'Descubre las técnicas de diseño gráfico digital.', '2023-07-01', '2023-08-15', 1),
-       ('Marketing Digital', 'Conviértete en experto en estrategias de marketing digital.', '2023-08-01', '2023-09-15', 2),
-       ('Inglés Avanzado', 'Mejora tus habilidades en el idioma inglés.', '2023-06-15', '2023-08-30', 2),
-       ('Desarrollo web con JavaScript', 'Aprende a crear aplicaciones web utilizando JavaScript.', '2023-07-15', '2023-09-30', 1);
+-- Inserción de 5 registros en la tabla 'cursos'
+INSERT INTO cursos (nombre, descripcion, duracion, fecha_inicio) VALUES
+  ('Programación', 'Curso de programación básica', 8, '2023-06-01'),
+  ('Diseño Gráfico', 'Curso de diseño gráfico profesional', 12, '2023-07-15'),
+  ('Inglés Avanzado', 'Curso de inglés nivel avanzado', 10, '2023-05-30'),
+  ('Marketing Digital', 'Curso de marketing digital para negocios', 6, '2023-06-10'),
+  ('Finanzas Personales', 'Curso de educación financiera', 4 ,'2023-06-05');
