@@ -42,6 +42,7 @@ app.post('/registrar', (req, res) => {
             const successMessage = encodeURIComponent('Error al guardar el usuario:');
             const redirectURL = '/usuarios.html' + '?mensaje=' + successMessage;
             res.redirect(redirectURL);
+            
         } else {
             console.log('Usuario registrado exitosamente.');
             const successMessage = encodeURIComponent('Usuario registrado exitosamente.');
