@@ -329,6 +329,10 @@ app.get('/usuariose.html', (req, res) => {
     res.render('usuariose');
 });
 
+app.get('/usuariost.html', (req, res) => {
+    res.render('usuariost');
+    
+});
 app.get('/cerrar-sesion', (req, res) => {
     // Eliminar la sesión
     req.session.destroy();

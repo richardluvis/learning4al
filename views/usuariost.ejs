@@ -79,9 +79,30 @@
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <form action="/registrar" method="POST">
-              <div class="form-group">
+              <div class="form-group col-sm">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" class="form-control" required>
+                </div>
+                <div class="form-group col-sm">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" class="form-control" required>
+              </div>
+              <div class="form-group">
+                <label for="region">Region</label>
+                <select name="region" class="form-control" required>
+                    <option value="Colombia">Colombia</option>
+                    <option value="NA">NA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ocupacion">Ocupacion</label>
+                <select name="ocupacion" class="form-control" required>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="desarrollador">Desarrollador de proyectos independintes</option>
+                    <option value="admin">Administrador de proyecto</option>
+                    <option value="NA">NA</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
@@ -90,16 +111,21 @@
               <div class="form-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" class="form-control" required>
+                <label for="password2">Repetir contraseña:</label>
+                <input type="password" name="password2" class="form-control" required>
               </div>
-              <div class="form-group">
-                <label for="tipo">Tipo de usuario:</label>
-                <select name="tipo" class="form-control" required>
-                  <option value="estudiante">Estudiante</option>
-                  <option value="administrador">Administrador</option>
-                </select>
-              </div>
+              <p> <br> </p>
               <button type="submit" class="btn btn-primary">Registrarse</button>  
             </form>
+          </div>
+          <div>
+            <iframe
+                id="inlineFrameExample"
+                title="youtube"
+                width="80%"
+                height="500px"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.1074189917767!2d-74.03250378960261!3d4.75136639520391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f8f7df50575cd%3A0xd21bdff9aaaa136!2sUniversidad%20De%20San%20Buenaventura!5e0!3m2!1ses-419!2sco!4v1697758975619!5m2!1ses-419!2sco"
+            ></iframe>
           </div>
         </div>
       </div>
