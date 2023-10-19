@@ -38,11 +38,12 @@ app.post('/registrar', (req, res) => {
 
     connection.query(query, values, (error, results) => {
         if (error) {
+        
             console.error('Error al guardar el usuario:', error);
             const successMessage = encodeURIComponent('Error al guardar el usuario:');
-            const redirectURL = '/usuarios.html' + '?mensaje=' + successMessage;
+            const redirectURL = '/usuariose.html' + '?mensaje=' + successMessage;            
             res.redirect(redirectURL);
-            
+
         } else {
             console.log('Usuario registrado exitosamente.');
             const successMessage = encodeURIComponent('Usuario registrado exitosamente.');
@@ -322,6 +323,10 @@ app.get('/course-details.html', (req, res) => {
 
 app.get('/usuarios.html', (req, res) => {
     res.render('usuarios');
+});
+
+app.get('/usuariose.html', (req, res) => {
+    res.render('usuariose');
 });
 
 app.get('/cerrar-sesion', (req, res) => {
