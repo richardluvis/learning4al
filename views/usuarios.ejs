@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">  
+  <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Registrate con nosotros</title>
@@ -79,9 +79,32 @@
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
             <form action="/registrar" method="POST">
-              <div class="form-group">
+                <div class="row">
+                <div class="form-group col-sm">
                 <label for="nombre">Nombre:</label>
                 <input type="text" name="nombre" class="form-control" required>
+                </div>
+                <div class="form-group col-sm">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" class="form-control" required>
+              </div>
+              </div>
+              <div class="form-group">
+                <label for="region">Region</label>
+                <select name="region" class="form-control" required>
+                    <option value="Colombia">Colombia</option>
+                    <option value="NA">NA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ocupacion">Ocupacion</label>
+                <select name="ocupacion" class="form-control" required>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="desarrollador">Desarrollador de proyectos independintes</option>
+                    <option value="admin">Administrador de proyecto</option>
+                    <option value="NA">NA</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="email">Email:</label>
@@ -90,14 +113,22 @@
               <div class="form-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" class="form-control" required>
+                <label for="password2">Repetir contraseña:</label>
+                <input type="password" name="password2" class="form-control" required>
+                <script>
+                  password = document.getElementById('password');
+                  password2 = document.getElementById('password2');
+
+                  if (password != password2){
+                    document.body.innerHTML = "Contraseña erronea";
+                  } else {
+                    let passwordf = password
+                    return passwordf;
+                  }
+                </script>
+                </script>
               </div>
-              <div class="form-group">
-                <label for="tipo">Tipo de usuario:</label>
-                <select name="tipo" class="form-control" required>
-                  <option value="estudiante">Estudiante</option>
-                  <option value="administrador">Administrador</option>
-                </select>
-              </div>
+              <p> <br> </p>
               <button type="submit" class="btn btn-primary">Registrarse</button>  
             </form>
           </div>

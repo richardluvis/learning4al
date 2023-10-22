@@ -99,10 +99,10 @@
               <div class="form-group">
                 <label for="ocupacion">Ocupacion</label>
                 <select name="ocupacion" class="form-control" required>
-                    <option value="estudiante">Estudiante</option>
-                    <option value="profesor">Profesor</option>
-                    <option value="desarrollador">Desarrollador de proyectos independintes</option>
-                    <option value="admin">Administrador de proyecto</option>
+                    <option value="Estudiante">Estudiante</option>
+                    <option value="Profesor">Profesor</option>
+                    <option value="Desarrollador de proyectos independintes">Desarrollador de proyectos independintes</option>
+                    <option value="Administrador de proyecto">Administrador de proyecto</option>
                     <option value="NA">NA</option>
                 </select>
               </div>
@@ -115,19 +115,25 @@
                 <input type="password" name="password" class="form-control" required>
                 <label for="password2">Repetir contraseña:</label>
                 <input type="password" name="password2" class="form-control" required>
+                <script>
+                  function validarContra() 
+                  {
+                  password = document.getElementById('password');
+                  password2 = document.getElementById('password2');
+
+                  if (password != password2){
+                    document.body.innerHTML = "Contraseña erronea";
+                  } else {
+                    const passwordf = [...document.querySelectorAll('[id=password]')];
+                    passwordf.setAttribute("id","paswordf")
+                    return passwordf;
+                  }
+                  }
+                </script>
               </div>
               <p> <br> </p>
               <button type="submit" class="btn btn-primary">Registrarse</button>  
             </form>
-          </div>
-          <div>
-            <iframe width="560" 
-            height="315" 
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            allowfullscreen></iframe>
           </div>
         </div>
       </div>

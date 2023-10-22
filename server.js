@@ -29,12 +29,15 @@ const connection = mysql.createConnection({
 app.post('/registrar', (req, res) => {
     const {
         nombre,
+        apellido,
+        region,
+        ocupacion,
         email,
-        password
+        passwordf
     } = req.body;
 
-    const query = 'INSERT INTO usuarios (nombre, email, pass) VALUES (?, ?, ?)';
-    const values = [nombre, email, password];
+    const query = 'INSERT INTO usuarios (nombre, apellido, region, ocupacion, email, pass) VALUES (?, ?, ?, ?, ?, ?)';
+    const values = [nombre, apellido, region, ocupacion, email, passwordf];
 
     connection.query(query, values, (error, results) => {
         if (error) {
@@ -79,14 +82,14 @@ app.post('/iniciar-sesion', (req, res) => {
             if (results.length > 0) {
                 // El usuario ha iniciado sesión correctamente
                 const nombreUsuario = results[0].nombre;
-                const tipoUsuario = results[0].tipo;
+                const codUn = results[0].cod;
 
-                if (tipoUsuario === 'administrador') {
+                if (codUn === '100378415') {
                     // Redireccionar a la página de administrador
                     res.render('pagina-administrador', {
                         nombreUsuario
                     });
-                } else if (tipoUsuario === 'estudiante') {
+                } else if (codUn === '100032') {
                     // Redireccionar a la página de estudiante
                     res.render('bienvenido', {
                         nombreUsuario
