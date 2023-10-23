@@ -33,11 +33,11 @@ app.post('/registrar', (req, res) => {
         region,
         ocupacion,
         email,
-        passwordf
+        password
     } = req.body;
 
     const query = 'INSERT INTO usuarios (nombre, apellido, region, ocupacion, email, pass) VALUES (?, ?, ?, ?, ?, ?)';
-    const values = [nombre, apellido, region, ocupacion, email, passwordf];
+    const values = [nombre, apellido, region, ocupacion, email, password];
 
     connection.query(query, values, (error, results) => {
         if (error) {
@@ -82,14 +82,14 @@ app.post('/iniciar-sesion', (req, res) => {
             if (results.length > 0) {
                 // El usuario ha iniciado sesión correctamente
                 const nombreUsuario = results[0].nombre;
-                const codUn = results[0].cod;
+                const codUn2 = results[0].codUn;
 
-                if (codUn === '100378415') {
+                if (codUn2 === 100378415) {
                     // Redireccionar a la página de administrador
                     res.render('pagina-administrador', {
                         nombreUsuario
                     });
-                } else if (codUn === '100032') {
+                } else if (codUn2 === 100032) {
                     // Redireccionar a la página de estudiante
                     res.render('bienvenido', {
                         nombreUsuario
@@ -334,8 +334,12 @@ app.get('/usuariose.html', (req, res) => {
 
 app.get('/usuariost.html', (req, res) => {
     res.render('usuariost');
-    
 });
+
+app.get('/perfiles.html', (req, res) => {
+    res.render('perfil_profesional');
+});
+
 app.get('/cerrar-sesion', (req, res) => {
     // Eliminar la sesión
     req.session.destroy();

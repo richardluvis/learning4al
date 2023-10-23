@@ -101,8 +101,8 @@
                 <select name="ocupacion" class="form-control" required>
                     <option value="estudiante">Estudiante</option>
                     <option value="profesor">Profesor</option>
-                    <option value="desarrollador">Desarrollador de proyectos independintes</option>
-                    <option value="admin">Administrador de proyecto</option>
+                    <option value="Desarrollador de proyectos independintes">Desarrollador de proyectos independintes</option>
+                    <option value="Administrador de proyecto">Administrador de proyecto</option>
                     <option value="NA">NA</option>
                 </select>
               </div>
@@ -113,18 +113,32 @@
               <div class="form-group">
                 <label for="password">Contraseña:</label>
                 <input type="password" name="password" class="form-control" required>
+                <!--<p id="noCoin" class="alert alert-danger ocultar">Las Contraseñas no coinciden, vuelve a intentarlo!</p>
                 <label for="password2">Repetir contraseña:</label>
                 <input type="password" name="password2" class="form-control" required>
+                --> 
+                <style>
+                  .ocultar{
+                    display: none;
+                  }
+                  .mostrar{
+                    display: block;
+                  }
+                </style>
                 <script>
+                 /* function validarContra() 
+                  {
                   password = document.getElementById('password');
                   password2 = document.getElementById('password2');
-
+                  passwordf = document.getElementById('passwordf')
                   if (password != password2){
-                    document.body.innerHTML = "Contraseña erronea";
+                    document.getElementById("noCoin").classList.add("mostrar");
                   } else {
-                    let passwordf = password
+                    document.getElementById("noCoin").classList.add("ocultar");
+                    let passwordf = password;
                     return passwordf;
                   }
+                  } */
                 </script>
                 </script>
               </div>
@@ -135,7 +149,6 @@
         </div>
       </div>
     </section>
-    
   
     <footer id="footer">
 
