@@ -340,6 +340,10 @@ app.get('/perfiles.html', (req, res) => {
     res.render('perfil_profesional');
 });
 
+app.get('/proyecto.html', (req, res) => {
+    res.render('v-semestre');
+})
+
 app.get('/cerrar-sesion', (req, res) => {
     // Eliminar la sesión
     req.session.destroy();
