@@ -324,6 +324,13 @@ app.get('/course-details.html', (req, res) => {
     res.render('course-details');
 });
 
+app.get('/course-detailsh.html', (req, res) => {
+    res.render('curso-html');
+});
+app.get('/course-detailss.html', (req, res) => {
+    res.render('curso-sql');
+});
+
 app.get('/usuarios.html', (req, res) => {
     res.render('usuarios');
 });
