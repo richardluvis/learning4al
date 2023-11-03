@@ -116,7 +116,7 @@
                 <p id="noCoin" class="alert alert-danger ocultar">Las Contraseñas no coinciden, vuelve a intentarlo!</p>
                 <label for="password2">Repetir contraseña:</label>
                 <input type="password" name="password2" class="form-control" >
-                
+                <script>validarContra(password,password2);</script>
                 <style>
                   .ocultar{
                     display: none;
@@ -126,7 +126,7 @@
                   }
                 </style>
                 <script>
-                 function validarContra() 
+                 function validarContra(nombre, nombre2) 
                   {
                   password = document.getElementById('password');
                   password2 = document.getElementById('password2');
@@ -136,6 +136,7 @@
                   } else {
                     document.getElementById("noCoin").classList.add("ocultar");
                     let passwordf = password;
+                    console.log("Contraseña: "+passwordf);
                     return passwordf;
                   }
                   } 
